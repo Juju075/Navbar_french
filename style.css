@@ -1,0 +1,137 @@
+/*----------  Imports  ----------*/
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+/*----------  Reset ----------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+/*----------  Subsection comment block  ----------*/
+
+body {
+  font-family: "Poppins";
+}
+
+/*Integralite du document */
+header {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/images/landscape.jpg); /* image de fond */
+  background-size: cover;
+}
+
+/*----------  Nav  ----------*/
+
+/*Suppreposer la nav bar*/
+.navbar {
+  width: 100%;
+  position: absolute; /* supperposer sorti du flux*/
+  padding: 50px; /**/
+  display: flex; /*Aligner les elements*/
+  justify-content: space-between; /* espacement entre les elements */
+  align-items: center;
+}
+
+/* Herite des regles de nav (Heritage) */
+.navbar a {
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Alignement - Titre sur une ligne*/
+.navbar .nav-links ul {
+  display: flex;
+}
+
+.navbar .nav-links ul li {
+  margin: 0 25px;
+}
+
+/*Titre actif*/
+.navbar .nav-links ul li a:active {
+  color: yellow;
+  font-weight: 600;
+}
+
+/*Positionnement du hamburger*/
+.navbar .menu-hamburger {
+  display: none;
+  position: absolute;
+  width: 35px;
+  top: 50px;
+  right: 50px;
+}
+
+/*=============================================
+           Responsive     
+           chrome responsive 802X912      
+=============================================*/
+@media screen and (max-width: 900px) {
+  /*enlever les paddings*/
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar .logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+
+  /*Astuce cache la barre de nav pour commencer a travailler sur mobile first*/
+  /*Ca sera le tiroir*/
+  .nav-links {
+    /*Flux display: none;*/
+    position: absolute; /*Prendre tous les crans.*/
+
+    /*Reset definir absolute start*/
+    top: 0;
+    left: 0;
+
+    /**/
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+
+    /*Zone d'action*/
+    width: 100%; /*verifier les paddings doit touche les extremites width du screen*/
+    height: 100vh; /*verifier 0 si absolute doit touche les extremites height du screen.*/
+
+    /*Le Flux*/
+    display: flex; /*il faut precise le flux - display flex*/
+
+    /*Positonnement dans le flux.*/
+    justify-content: center; /***/
+    align-items: center;
+
+    margin-left: -100%; /* tiroir cache a gauche */
+  }
+  /**le tout attache*/
+  .nav-links.mobile-menu {
+    margin-left: 0;
+  }
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .nav-links ul li {
+    margin: 25px 0;
+    font-size: 1.2em;
+  }
+
+  /*Modifie la regle initiale.*/
+  .navbar .menu-hamburger {
+    display: block;
+  }
+}
