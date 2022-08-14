@@ -18,8 +18,8 @@ body {
   font-family: "Poppins";
 }
 
-/*Integralite du document */
-header {
+/*Intégralite du document */
+#background-image {
   height: 100vh;
   width: 100vw;
   background-image: url(/images/landscape.jpg); /* image de fond */
