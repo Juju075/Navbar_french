@@ -18,12 +18,13 @@ body {
   font-family: "Poppins";
 }
 
-/*Intégralite du document */
+/*Image de fond*/
 #background-image {
-  height: 100vh;
+  height: 100vh; /*100% du viewport */
   width: 100vw;
   background-image: url(/images/landscape.jpg); /* image de fond */
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /*----------  Nav  ----------*/
@@ -84,7 +85,7 @@ body {
 
   .navbar .logo {
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 50px;
   }
 
@@ -114,7 +115,10 @@ body {
     align-items: center;
 
     margin-left: -100%; /* tiroir cache a gauche */
+    /* transition */
+    transition: all 0.5s ease;
   }
+
   /**le tout attache*/
   .nav-links.mobile-menu {
     margin-left: 0;
